@@ -1,3 +1,5 @@
-altair
-pandas
+cohere
+langchain
 streamlit
+streamlit-authenticator
+pinecone-client
