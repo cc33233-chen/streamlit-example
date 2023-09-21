@@ -72,6 +72,21 @@ class meta_message:
         return self
 
 
+st.set_page_config("CECI/REI Multilingual Project Docs Chat Bot 🤖", layout="centered")
+st.title("CTCI/REI Multilingual Project Docs Chat Bot 🤖")
+
+# Sidebar contents
+with st.sidebar:
+    #st.title('🤗💬 CTCI/REI LLM Chat App')
+    st.markdown('''
+    ![CTCI LOGO](https://reithree.blob.core.windows.net/share/logo.png)
+    ## About
+    - 採用技術為 Multilingual LLM Model 
+    - 主要應用於專案備標文件疑義澄清、專案契約條款解譯、專案會議文件總結、品管安衛環文件衝突分析、專案採購文件差異分析
+    ''')
+    st.write('Build with ❤️ by [CTCI/REI BMC](https://www.ctci.com/)')
+
+
 import streamlit_authenticator as stauth
 import yaml
 
@@ -94,28 +109,16 @@ if authentication_status:
     if username == 'jsmith':
 #        st.write(f'Welcome *{name}*')
 #        st.title('Application 1')
-        st.set_page_config("CECI/REI Multilingual Project Docs Chat Bot 🤖", layout="centered")
-        st.title("CTCI/REI Multilingual Project Docs Chat Bot 🤖")
-
-        # Sidebar contents
-        with st.sidebar:
-            #st.title('🤗💬 CTCI/REI LLM Chat App')
-            st.markdown('''
-            ![CTCI LOGO](https://reithree.blob.core.windows.net/share/logo.png)
-            ## About
-            - 採用技術為 Multilingual LLM Model 
-            - 主要應用於專案備標文件疑義澄清、專案契約條款解譯、專案會議文件總結、品管安衛環文件衝突分析、專案採購文件差異分析
-            ''')
-            st.write('Build with ❤️ by [CTCI/REI BMC](https://www.ctci.com/)')
-
-
         # API Initiation
         #COHERE_API_KEY = st.secrets.COHERE_API_KEY
-        #PINECONE_API_KEY = st.secrets.COHERE_API_KEY
-        #PINECONE_API_ENV = st.secrets.COHERE_API_KEY
-        COHERE_API_KEY = "lXA8OvRRCsJ8fltEZaMkjYSxUPIkH6w3E6ThHfow"
-        PINECONE_API_KEY = "10dc94d7-ba3b-4637-bf32-8056981fc9ed"
-        PINECONE_API_ENV = "us-west4-gcp-free"
+        #PINECONE_API_KEY = st.secrets.PINECONE_API_KEY
+        #PINECONE_API_ENV = st.secrets.PINECONE_API_ENV
+        #COHERE_API_KEY = "lXA8OvRRCsJ8fltEZaMkjYSxUPIkH6w3E6ThHfow"
+        #PINECONE_API_KEY = "10dc94d7-ba3b-4637-bf32-8056981fc9ed"
+        #PINECONE_API_ENV = "us-west4-gcp-free"
+        COHERE_API_KEY = st.secrets["COHERE_API_KEY"]
+        PINECONE_API_KEY = st.secrets["PINECONE_API_KEY"]
+        PINECONE_API_ENV = st.secrets["PINECONE_API_ENV"]
 
         # initialize pinecone
         pinecone.init(
