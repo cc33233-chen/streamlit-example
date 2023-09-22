@@ -11,8 +11,8 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from langchain.vectorstores import Pinecone
 import pinecone
+import os
 #from langchain.document_loaders import TextLoader
-#import os
 #import random
 #import textwrap as tr
 
@@ -116,9 +116,12 @@ if authentication_status:
         #COHERE_API_KEY = "lXA8OvRRCsJ8fltEZaMkjYSxUPIkH6w3E6ThHfow"
         #PINECONE_API_KEY = "10dc94d7-ba3b-4637-bf32-8056981fc9ed"
         #PINECONE_API_ENV = "us-west4-gcp-free"
-        COHERE_API_KEY = st.secrets["COHERE_API_KEY"]
-        PINECONE_API_KEY = st.secrets["PINECONE_API_KEY"]
-        PINECONE_API_ENV = st.secrets["PINECONE_API_ENV"]
+        #COHERE_API_KEY = st.secrets["COHERE_API_KEY"]
+        #PINECONE_API_KEY = st.secrets["PINECONE_API_KEY"]
+        #PINECONE_API_ENV = st.secrets["PINECONE_API_ENV"]
+        COHERE_API_KEY = os.environ["COHERE_API_KEY"]
+        PINECONE_API_KEY = os.environ["PINECONE_API_KEY"]
+        PINECONE_API_ENV = os.environ["PINECONE_API_ENV"]
 
         # initialize pinecone
         pinecone.init(
